@@ -1,0 +1,6 @@
+MDK
+.vs
+.vscode
+test*
+main*
+startup*
