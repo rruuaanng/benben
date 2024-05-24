@@ -18,9 +18,9 @@ extern "C" {
 #define BIT16_FULL_SET_MASK    0x1111U
 #define BIT32_FULL_SET_MASK    0x11111111U
 
-#define BIT8_FULL_CLEAR_MASK   0x00U
-#define BIT16_FULL_CLEAR_MASK  0x0000U
-#define BIT32_FULL_CLEAR_MASK  0x00000000U
+#define BIT8_FULL_RESET_MASK   0x00U
+#define BIT16_FULL_RESET_MASK  0x0000U
+#define BIT32_FULL_RESET_MASK  0x00000000U
 
 #define BIT8_LOW(v)            ((v) & 0xFF)
 #define BIT16_LOW(V)           ((V) & 0XFFFF)
