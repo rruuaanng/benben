@@ -1,10 +1,10 @@
 #ifndef BENBEN_MATH_H
 #define BENBEN_MATH_H
 
-#include <types.h>
 
-extern uint16_t sin_table[];
-extern uint16_t cos_table[];
+float sin(int deg);
+
+float cos(int deg);
 
 static uint16_t to_q15(float n)
 {
