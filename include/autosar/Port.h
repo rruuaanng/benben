@@ -4,6 +4,7 @@
 #include <autosar/Std_Types.h>
 #include <autosar/cfg.h>
 
+
 // [SWS_Port_00051] Definiton of development errors in module Port
 #define PORT_E_PARAM_PIN                        0x0A
 #define PORT_E_DIRECTION_UNCHANGEABLE           0x0B
