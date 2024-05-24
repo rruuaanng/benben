@@ -2,5 +2,6 @@ MDK
 .vs
 .vscode
 test*
-main*
+test*
 startup*
+*.exe
