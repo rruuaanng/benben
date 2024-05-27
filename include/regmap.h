@@ -24,40 +24,40 @@ extern "C" {
 #define WRITE_ONCE(var, v)     ((var) = (v))
 #endif // __GNUC__
 
-#define REGMAP(bit) \
-static inline __mem u##bit * \
-regmap##bit(unsigned long addr, int offset) \
+#define __REGMAP(bit) \
+static inline __mem u##bit \
+*regmap##bit(unsigned long addr, int offset) \
 { \
     __mem u##bit *reg; \
     reg = (u##bit *)(addr + offset); \
     return reg; \
 }
-REGMAP(8)
-REGMAP(16)
-REGMAP(32)
+__REGMAP(8)
+__REGMAP(16)
+__REGMAP(32)
 
 // 怎么会有这种无语的函数！！！
 // 你冒昧吗
 // 怎么读不上来
-#define READ(bit, type) \
+#define __READ(bit, type) \
 static inline u##bit \
 read##type(__mem u##bit *addr) \
 { \
     return *addr; \
 }
-READ(8, b)
-READ(16, w)
-READ(32, l)
+__READ(8, b)
+__READ(16, w)
+__READ(32, l)
 
-#define WRITE(bit, type) \
+#define __WRITE(bit, type) \
 static inline void \
 write##type(__mem u##bit *addr, u##bit value) \
 { \
     WRITE_ONCE(*addr, value); \
 }
-WRITE(8, b)
-WRITE(16, w)
-WRITE(32, l)
+__WRITE(8, b)
+__WRITE(16, w)
+__WRITE(32, l)
 
 #ifdef __cplusplus
 }
