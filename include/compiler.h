@@ -55,6 +55,7 @@ extern "C" {
 #define __alloc_size__(x, ...)  __attribute__((__alloc_size__(x, ## __VA_ARGS__)))
 
 #define __printf(a, b)          __attribute__((__format__(printf, a, b)))
+
 #define __scanf(a, b)           __attribute__((__format__(scanf, a, b)))
 
 #define __alias(symbol)         __attribute__((__alias__(#symbol)))
