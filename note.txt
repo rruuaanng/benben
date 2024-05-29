@@ -1,0 +1,12 @@
+本项目所有函数名都必须带上前缀e, 目的是使得兼容cmsis_os接口时不容易出现重复命名
+例如：
+void e_xxx_xxx() {
+
+}
+
+需要实现：
+mutex（采用二进制信号量实现）|semaphore
+thread|mail（邮箱通信）
+kernel（内核相关操作，例如初始化调度器）
+timer（内核定时器）
+thread（创建线程相关操作）

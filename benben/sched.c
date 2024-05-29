@@ -1,7 +1,14 @@
 #include <sched.h>
 
+static int current;
 
-void os_sched(void)
+void e_init_sched()
 {
 	
+}
+
+
+int e_get_current(void)
+{
+
 }

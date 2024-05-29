@@ -8,6 +8,8 @@ extern "C" {
 #define MASK(v, pos)           ((v) << (pos))
 #define BIT(pos)               (1U << (pos))
 
+#define WRITE_ONCE(var, v)     ((var) = (v))
+
 #define SET_BIT(addr, mask)    ((addr) |= (mask))
 #define RESET_BIT(addr, mask)  ((addr) &= ~(mask))
 #define READ_BIT(addr, mask)   ((addr) & (mask))

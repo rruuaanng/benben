@@ -5,7 +5,14 @@
 extern "C" {
 #endif
 
-void os_sched(void);
+#define TASK_STATUS_RUNNING           0x01
+#define TASK_STATUS_READY             0x02
+#define TASK_STATUS_WAIT              0x03
+#define TASK_STATUS_FREE              0x04
+
+
+void e_init_sched(void);
+int e_get_current(void);
 
 #ifdef __cplusplus
 }

@@ -18,6 +18,9 @@ typedef int16_t                s16;
 typedef int32_t                s32;
 typedef int64_t                s64;
 
+typedef float                  float32_t;
+typedef double                 float64_t;
+
 #ifndef NULL
 #define NULL                   ((void *)0)   /* NULL alias val */
 #endif // NULL

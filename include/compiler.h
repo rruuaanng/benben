@@ -1,5 +1,5 @@
-#ifndef BENBEN_COMPILER_GCC_BUILTIN_H
-#define BENBEN_COMPILER_GCC_BUILTIN_H
+#ifndef BENBEN_COMPILER_H
+#define BENBEN_COMPILER_H
 
 
 #ifdef __cplusplus
@@ -15,7 +15,7 @@ extern "C" {
 #define static_assert_nmsg(cond) _Static_assert(cond, "")
 #define static_assert(cond, msg) _Static_assert(cond, msg)
 
-#endif // 201112L
+#endif // __STDC_VERSION__
 
 /* GCC extension */
 #if __GNUC__
@@ -66,8 +66,12 @@ extern "C" {
 
 #define noinline              __attribute__((__noinline__))
 
+
+#endif // __GNUC__
+
 #ifdef __cplusplus
 }
 #endif // __cplusplus
 
-#endif // BENBEN_COMPILER_GCC_BUILTIN_H
+
+#endif // BENBEN_COMPILER_H

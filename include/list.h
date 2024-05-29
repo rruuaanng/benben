@@ -5,9 +5,8 @@
 extern "C" {
 #endif
 
-#include <io.h>
+#include <bit.h>
 #include <types.h>
-
 
 #define LIST_INIT_HEAD(name) \
     struct list_node name = { .next = NULL, .prev = NULL}
@@ -20,7 +19,7 @@ static inline void LIST_INIT_NODE(struct list_node *node)
 
 static inline void list_add(struct list_node *head, struct list_node *node)
 {
-    head->
+
 }
 
 #ifdef __cplusplus
