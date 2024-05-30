@@ -22,12 +22,13 @@ void *e_alloc(int size)
     if (!(size & MEMORY_ALIGN_MASK)) 
         align_num = MEMORY_ALIGN_BYTE - (size & MEMORY_ALIGN_MASK);
 
+    // 此处编写停止调度器的函数
     align_mem = (uint8_t *)(((uint64_t)&heap[MEMORY_ALIGN_BYTE - 1]) 
                 & (~((uint64_t)MEMORY_ALIGN_MASK)));
 
     void *mem = align_mem + free_idx;
     free_idx += size;
-
+    // 此处编写恢复调度器的函数
     return mem;
 }
 

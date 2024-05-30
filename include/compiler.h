@@ -66,7 +66,7 @@ extern "C" {
 
 #define noinline                __attribute__((__noinline__))
 
-#define section(name)           __attribute__((section(#name)))
+#define __section(name)         __attribute__((section(#name)))
 
 
 #endif // __GNUC__
