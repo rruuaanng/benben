@@ -64,7 +64,9 @@ extern "C" {
 
 #define __aligned_largest       __attribute__((__aligned__))
 
-#define noinline              __attribute__((__noinline__))
+#define noinline                __attribute__((__noinline__))
+
+#define section(name)           __attribute__((section(#name)))
 
 
 #endif // __GNUC__

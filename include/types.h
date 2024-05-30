@@ -25,10 +25,6 @@ typedef double                 float64_t;
 #define NULL                   ((void *)0)   /* NULL alias val */
 #endif // NULL
 
-struct list_node {
-    struct list_node *next;
-    struct list_node *prev;  
-};
 
 #ifdef __cplusplus
 }

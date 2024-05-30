@@ -5,6 +5,13 @@
 extern "C" {
 #endif
 
+#include <list.h>
+
+struct semaphore{
+    int count;
+    struct list_node *wait_list;
+};
+
 
 #ifdef __cplusplus
 }

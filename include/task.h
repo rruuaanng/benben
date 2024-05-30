@@ -5,9 +5,15 @@
 extern "C" {
 #endif
 
+struct task{
+    int pid;
+    int prio;
+    char *name;
+    void (*fn)(void *args);
+};
 
 int e_create_task(void (*fn)(void *args), 
-            char *thread_name);
+            char *task_name);
             
 
 #ifdef __cplusplus

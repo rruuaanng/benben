@@ -10,7 +10,6 @@ extern "C" {
 #define TASK_STATUS_WAIT              0x03
 #define TASK_STATUS_FREE              0x04
 
-
 void e_init_sched(void);
 int e_get_current(void);
 

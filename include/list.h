@@ -5,21 +5,61 @@
 extern "C" {
 #endif
 
-#include <bit.h>
 #include <types.h>
 
-#define LIST_INIT_HEAD(name) \
-    struct list_node name = { .next = NULL, .prev = NULL}
+struct list_node {
+    void *owner;
+    int prio;
+    struct list_node *next;
+    struct list_node *prev;  
+};
 
-static inline void LIST_INIT_NODE(struct list_node *node) 
+#define LIST_INIT_HEAD(name) \
+    struct list_node name = {NULL, -1 ,NULL, NULL}
+
+static inline 
+void list_init_node(struct list_node *node, void *owner, int prio) 
 {
-    WRITE_ONCE(node->next, NULL);
-    WRITE_ONCE(node->prev, NULL);
+    node->owner = owner;
+    node->prio = prio;
+    node->next = node;
+    node->prev = node;
 }
 
-static inline void list_add(struct list_node *head, struct list_node *node)
-{
+#define list_for_each(head, pos) \
+    for (pos = (head)->next; pos != (head); pos = pos->next)
 
+
+#define list_node_next(node)            ((node)->next)
+
+#define list_node_prev(node)            ((node)->prev)
+
+
+
+static inline 
+struct list_node *__list_for_each_end(struct list_node *head)
+{
+    struct list_node *tmp;
+    
+    for(tmp = head; tmp->next != NULL; tmp = tmp->next) {
+        /* nothing */
+    }
+
+    return tmp;
+}
+
+static inline
+void list_add(struct list_node *head, struct list_node *node)
+{
+    // struct list_node *tmp = __for_each_list_end(head);
+
+
+}
+
+static inline
+void list_add_tail(struct list_node *head, struct list_node *node)
+{
+    
 }
 
 #ifdef __cplusplus
