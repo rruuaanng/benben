@@ -6,15 +6,18 @@ extern "C" {
 #endif
 
 struct task{
-    int pid;
+    int id;
     int prio;
     char *name;
     void (*fn)(void *args);
 };
 
-int e_create_task(void (*fn)(void *args), 
-            char *task_name);
-            
+int create_task(char *task_name, void (*fn)(void *args), void *args,
+            char *stack);
+
+int get_task_id(char *task_name);
+
+void get_task_name(int id, char *name_buf);            
 
 #ifdef __cplusplus
 }

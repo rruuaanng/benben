@@ -1,8 +1,6 @@
 MDK
 .vs
 .vscode
-test*
-test*
 startup*
 *.exe
 *.d
