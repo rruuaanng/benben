@@ -2,18 +2,20 @@
 #define BENBEN_CFG_H
 
 /*
- * heap memory management
- *
- * 0U        simple memory alloc
- * 1U        thread safe libc memory alloc
- * 2U        
- */ 
-#define MEMORY_ALLOC_TYPE                       0U
+ * heap memory management       
+ */
 #define SIMPLE_MEMORY_ALLOC_HEAP_SIZE           4096U
-#define MEMORY_ALIGN_BYTE                       4
+#define MEMORY_ALIGN_BYTE                       4U
 #define MEMORY_ALIGN_MASK                       0x0B
 
-extern void *e_alloc(int size);
-extern void e_free(void *mem);
+
+void *tmalloc(int size);
+void tfree(void *mem);
+
+#ifdef __STDC__
+void *smalloc(int size);
+void sfree(void *mem);
+#endif // __STDC__
+
 
 #endif // BENBEN_CFG_H
